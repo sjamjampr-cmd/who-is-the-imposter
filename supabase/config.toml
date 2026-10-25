@@ -1,0 +1,4 @@
+project_id = "who-is-the-imposter"
+
+[functions.game-api]
+verify_jwt = true
