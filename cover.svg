@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Colorful characters circle a mystery card">
+  <rect width="1200" height="630" rx="42" fill="#faf8f2"/>
+  <circle cx="950" cy="90" r="260" fill="#fff0e8"/><circle cx="215" cy="550" r="280" fill="#f0ebff"/>
+  <g fill="none" stroke="#dfd7c8" stroke-width="3" stroke-dasharray="8 12"><ellipse cx="625" cy="322" rx="365" ry="225" transform="rotate(-8 625 322)"/><ellipse cx="625" cy="322" rx="285" ry="170" transform="rotate(12 625 322)"/></g>
+  <g font-family="Arial, sans-serif" font-weight="700" text-anchor="middle">
+    <g transform="translate(315 190) rotate(-8)"><rect width="116" height="122" rx="30" fill="#fff" stroke="#e9e4d9" stroke-width="3"/><text x="58" y="76" font-size="58">🦊</text></g>
+    <g transform="translate(820 148) rotate(8)"><rect width="116" height="122" rx="30" fill="#e7e0ff" stroke="#e9e4d9" stroke-width="3"/><text x="58" y="76" font-size="58">🐸</text></g>
+    <g transform="translate(975 355) rotate(7)"><rect width="116" height="122" rx="30" fill="#dff1aa" stroke="#e9e4d9" stroke-width="3"/><text x="58" y="76" font-size="58">🐻</text></g>
+    <g transform="translate(420 430) rotate(5)"><rect width="116" height="122" rx="30" fill="#d8f0fa" stroke="#e9e4d9" stroke-width="3"/><text x="58" y="76" font-size="58">🐧</text></g>
+    <g transform="translate(700 410) rotate(-5)"><rect width="116" height="122" rx="30" fill="#ffe2d9" stroke="#e9e4d9" stroke-width="3"/><text x="58" y="76" font-size="58">🐱</text></g>
+  </g>
+  <g transform="translate(522 161) rotate(-4 100 145)"><rect x="0" y="0" width="205" height="300" rx="30" fill="#e6c7bc"/><rect x="0" y="-10" width="205" height="300" rx="30" fill="#ff715b" stroke="#fffaf3" stroke-width="10"/><circle cx="102" cy="129" r="62" fill="none" stroke="#fff" stroke-width="4" opacity=".85"/><text x="102" y="154" fill="#fff" font-family="Arial,sans-serif" font-size="98" font-weight="700" text-anchor="middle">?</text><text x="102" y="222" fill="#fff" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="2" text-anchor="middle">WHO'S BLUFFING?</text><text x="102" y="251" fill="#ffe7de" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">one of you knows less</text></g>
+  <g fill="#e7b64d"><path d="m285 355 9 20 21 2-16 13 5 21-19-11-18 11 4-21-16-13 22-2z"/><circle cx="890" cy="535" r="8"/><path d="m901 102 7 15 16 2-12 10 4 16-15-8-14 8 3-16-12-10 16-2z"/></g>
+  <g fill="#a997e4"><circle cx="360" cy="340" r="7"/><path d="m895 303 5 12 13 1-10 8 3 13-11-7-11 7 3-13-10-8 13-1z"/></g>
+  <text x="600" y="602" fill="#837b70" font-family="Arial,sans-serif" font-size="16" text-anchor="middle" letter-spacing="3">ONE WORD  ·  ONE OUTSIDER</text>
+</svg>
