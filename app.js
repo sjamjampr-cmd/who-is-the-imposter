@@ -142,7 +142,7 @@ function hostStartButton() {
 
 function lobbyMarkup() {
   const count = activePlayers().length;
-  return `<h2 class="room-title">The crew is gathering</h2><p class="room-subtitle">Share the code above. You need at least 6 players, and there’s room for 12. Everyone joins on their own phone.</p>${playerCards()}<div class="room-actions">${hostStartButton()}<button class="button button-secondary" data-action="leave" type="button">Leave room</button></div><p class="room-note">${count}/12 players · One imposter will be chosen at random. Keep your phone to yourself when your secret appears.</p>`;
+  return `<h2 class="room-title">The crew is gathering</h2><p class="room-subtitle">Share the code above. You need at least 4 players, and there’s room for 12. Everyone joins on their own phone.</p>${playerCards()}<div class="room-actions">${hostStartButton()}<button class="button button-secondary" data-action="leave" type="button">Leave room</button></div><p class="room-note">${count}/12 players · One imposter will be chosen at random. Keep your phone to yourself when your secret appears.</p>`;
 }
 
 function roleMarkup() {
