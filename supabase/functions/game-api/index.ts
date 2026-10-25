@@ -162,7 +162,7 @@ function applyAction(s: State, userId: string, action: string, p: Record<string,
       host(s, userId);
       if (s.phase !== "lobby") throw new Error("This round is already in progress.");
       const playing = s.players.filter((x) => x.active);
-      if (playing.length < 6) throw new Error("You need at least 6 players to start.");
+      if (playing.length < 4) throw new Error("You need at least 4 players to start.");
       s.secretWord = pick(WORDS);
       s.imposterId = pick(playing).id;
       s.roles = Object.fromEntries(playing.map((player) => [player.id, player.id === s.imposterId ? { role: "imposter" } : { role: "crew", secretWord: s.secretWord }]));
