@@ -10,34 +10,15 @@ A phone-first social deduction game for 6–12 players. The crew gets one secret
 - `.github/workflows/deploy.yml` — deploys the static site to GitHub Pages when changes land on `main`.
 - `cover.svg` — contest cover art.
 
-## Before launch
+## Live deployment
 
-GitHub Pages serves the site; it does not run the game server. The game uses a Supabase project for anonymous guest sessions, private game state, and low-latency room updates. Players do not need GitHub, Supabase, ChatGPT, email, or passwords.
+- **Play:** https://sjamjampr-cmd.github.io/who-is-the-imposter/
+- **Public source:** https://github.com/sjamjampr-cmd/who-is-the-imposter
+- **Realtime backend:** Supabase project `who-is-the-imposter` (`dxwlncuxyhvuqpphybzj`, US East)
 
-### 1. Create the Supabase project
+GitHub Pages hosts the static game, and Supabase provides guest sessions, private room state, and realtime refresh signals. The database migration and `game-api` Edge Function are deployed. Anonymous sign-ins are enabled, so players do not need email, passwords, an account, or an install. No service-role key is included in the repository or client.
 
-1. Create a Supabase project and enable **Anonymous Sign-Ins** in Authentication settings.
-2. Install the Supabase CLI and link this folder to your project:
-
-   ```sh
-   supabase login
-   supabase link --project-ref YOUR_PROJECT_REF
-   supabase db push
-   supabase functions deploy game-api
-   ```
-
-   The function uses the `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` server environment values Supabase provides. Never put the service-role key in the browser or commit it to GitHub. If public Broadcast channels are disabled in the project, enable them for this game; clients use them only as safe refresh signals.
-
-4. Copy the project URL and the **publishable key** (or legacy anon key) from the Supabase project settings. In `app.js`, replace `PASTE_SUPABASE_PROJECT_URL_HERE` and `PASTE_SUPABASE_PUBLISHABLE_KEY_HERE`. These browser values are public by design; database permissions still need to remain locked down by the migration.
-
-### 2. Publish with GitHub Pages
-
-1. Put this folder in a GitHub repository. For free GitHub Pages hosting, the repository needs to be public.
-2. Push the files to the `main` branch.
-3. In **Settings → Pages**, choose **GitHub Actions** as the build and deployment source.
-4. Wait for the **Publish game to GitHub Pages** workflow to finish. GitHub shows the live URL in the Pages settings and the workflow deployment environment. The workflow publishes only the browser files; the database schema and server function stay out of the website bundle.
-
-The default link is `https://<github-account>.github.io/<repository-name>/`. If a short personalized domain is important, configure a domain you own through GitHub Pages settings; `chatgpt.site` is reserved for ChatGPT Sites and cannot be carried over to GitHub Pages.
+The GitHub Actions workflow deploys the site on each push to `main`. It publishes the page bundle only; server source and database schema are excluded from the deployed website. Future changes to room-state or Edge Function code should be deployed to Supabase as well as committed to GitHub.
 
 ## How a round works
 
@@ -61,6 +42,6 @@ Nicknames are shown to other room players. The game does not ask for an email, f
 - **Title:** Who Is the Imposter? — One Word, One Outsider
 - **Description:** A quick, phone-friendly social deduction game for 6–12 friends. Everyone except one player gets the same secret word. Take turns giving short clues, discuss face to face, then vote privately on your phone. If the group votes for the wrong person, the imposter gets one chance to guess the secret word and steal the win. Create a room, share its code, and play together—no account or install required for players.
 - **Cover image:** `cover.svg`
-- **Link:** Add the GitHub Pages URL after the first successful deployment.
+- **Link:** https://sjamjampr-cmd.github.io/who-is-the-imposter/
 
 The official contest rules require a title, cover image, description, and project URL submitted through the Handshake AI Skills Studio “Create a Multiplayer Game” mission by October 30, 2026 at 11:59 p.m. PT.
