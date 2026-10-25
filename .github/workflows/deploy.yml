@@ -1,0 +1,39 @@
+name: Publish game to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v6
+      - name: Set up Pages
+        uses: actions/configure-pages@v5
+      - name: Assemble public site files
+        run: |
+          mkdir -p _site
+          cp index.html styles.css app.js cover.svg _site/
+          touch _site/.nojekyll
+      - name: Upload site files
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4
