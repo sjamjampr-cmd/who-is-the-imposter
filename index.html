@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#faf8f2" />
+    <meta name="description" content="A quick, phone-friendly social deduction game. Join with a room code, share clues, and find the imposter." />
+    <title>Who Is the Imposter? — One Word, One Outsider</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#" id="home-link" aria-label="Who Is the Imposter home">
+          <span class="brand-mark" aria-hidden="true"><span>?</span></span>
+          <span>WHO'S THE <b>IMPOSTER?</b></span>
+        </a>
+        <button class="text-button" id="rules-button" type="button">How to play</button>
+      </header>
+
+      <main id="app" aria-live="polite">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> THE PARTY GAME OF SUSPICIOUS CLUES</p>
+            <h1>One word.<br /><span>One outsider.</span></h1>
+            <p class="lede">Everyone gets the same secret word. Except one of you. Give clues, spot the imposter, and see if they can bluff their way out.</p>
+            <div class="hero-actions">
+              <button class="button button-primary" id="create-room" type="button">Create a room <span aria-hidden="true">↗</span></button>
+              <button class="button button-secondary" id="show-join" type="button">Join with a code</button>
+            </div>
+            <p class="microcopy"><span aria-hidden="true">✦</span> 6–12 players · About 8 minutes · No account needed</p>
+          </div>
+          <div class="hero-art" aria-label="A table of friendly mystery characters">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="spark spark-a">✦</div><div class="spark spark-b">✳</div>
+            <div class="character c-one"><span>🦊</span><small>CREW?</small></div>
+            <div class="character c-two"><span>🐸</span><small>CREW?</small></div>
+            <div class="character c-three"><span>🐻</span><small>CREW?</small></div>
+            <div class="character c-four"><span>🐧</span><small>CREW?</small></div>
+            <div class="character c-five"><span>🐱</span><small>CREW?</small></div>
+            <div class="mystery-card"><span class="mystery-icon">?</span><b>WHO'S BLUFFING?</b><small>one of you knows less</small></div>
+            <div class="art-caption">A little clue goes a long way <span>↗</span></div>
+          </div>
+        </section>
+
+        <section class="how-strip" aria-label="Three simple steps">
+          <div><span class="step-no">01</span><b>Get your secret</b><small>One player gets no word.</small></div>
+          <div><span class="step-no">02</span><b>Drop a clue</b><small>Say just enough to fit in.</small></div>
+          <div><span class="step-no">03</span><b>Vote & reveal</b><small>Find the outsider—or get fooled.</small></div>
+        </section>
+
+        <section class="join-panel hidden" id="join-panel">
+          <div class="panel-head"><div><p class="eyebrow">BACK IN THE GAME?</p><h2>Join your crew</h2></div><button class="icon-button" id="close-join" type="button" aria-label="Close">×</button></div>
+          <form id="join-form" class="form-grid">
+            <label>Room code<input name="code" maxlength="6" autocomplete="off" placeholder="e.g. MINT42" required /></label>
+            <label>Your nickname<input name="nickname" maxlength="18" autocomplete="nickname" placeholder="What should we call you?" required /></label>
+            <button class="button button-primary" type="submit">Join room <span aria-hidden="true">→</span></button>
+            <p class="form-message" id="join-message" role="status"></p>
+          </form>
+        </section>
+
+        <section class="join-panel hidden" id="create-panel">
+          <div class="panel-head"><div><p class="eyebrow">MAKE A PRIVATE ROOM</p><h2>Bring your crew</h2></div><button class="icon-button" id="close-create" type="button" aria-label="Close">×</button></div>
+          <form id="create-form" class="form-grid">
+            <label>Your nickname<input name="nickname" maxlength="18" autocomplete="nickname" placeholder="What should we call you?" required /></label>
+            <button class="button button-primary" type="submit">Create room <span aria-hidden="true">→</span></button>
+            <p class="form-message" id="create-message" role="status"></p>
+          </form>
+        </section>
+
+        <section class="room-view hidden" id="room-view"></section>
+      </main>
+
+      <footer class="footer"><span>Made for your next group hang.</span><span>Keep your secret on your screen. <b>🤫</b></span></footer>
+    </div>
+
+    <dialog id="rules-dialog" class="rules-dialog">
+      <div class="panel-head"><div><p class="eyebrow">THE WHOLE GAME IN 20 SECONDS</p><h2>How to play</h2></div><button class="icon-button" id="close-rules" type="button" aria-label="Close rules">×</button></div>
+      <ol class="rules-list">
+        <li><span>01</span><div><b>Peek at your role.</b><p>The crew sees one secret word. The imposter sees no word at all.</p></div></li>
+        <li><span>02</span><div><b>Give one clue.</b><p>Take turns giving a short clue that fits the word without saying it outright.</p></div></li>
+        <li><span>03</span><div><b>Talk it out, then vote.</b><p>Discuss face to face. Everyone privately picks one person on their phone.</p></div></li>
+        <li><span>04</span><div><b>Could the imposter still win?</b><p>If the group votes wrong, the imposter gets one final guess at the secret word.</p></div></li>
+      </ol>
+      <p class="rules-footer">6–12 players · One imposter · Around 8 minutes</p>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
