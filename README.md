@@ -1,6 +1,6 @@
 # Who Is the Imposter? — One Word, One Outsider
 
-A phone-first social deduction game for 6–12 players. The crew gets one secret word; the imposter has to infer it from everyone's clues. After a wrong vote, the imposter gets one final guess.
+A phone-first social deduction game for 4–12 players. The crew gets one secret word; the imposter has to infer it from everyone's clues. After a wrong vote, the imposter gets one final guess.
 
 ## What is included
 
@@ -23,7 +23,7 @@ The GitHub Actions workflow deploys the site on each push to `main`. It publishe
 ## How a round works
 
 1. The host creates a room and shares its six-character code/link. Players choose a nickname and join.
-2. At 6–12 players, the host starts the round. Every player privately sees their role: one random imposter sees no word; everyone else sees the same secret word.
+2. At 4–12 players, the host starts the round. Every player privately sees their role: one random imposter sees no word; everyone else sees the same secret word.
 3. Players privately submit one short clue in turn. Clues appear to the room together after the last player submits.
 4. Players discuss face to face, then vote privately. Individual ballots never appear in the shared snapshot.
 5. If the imposter is found, the crew wins. If the vote misses, the imposter gets one guess. A correct guess wins for the imposter; a miss wins for the crew.
@@ -40,7 +40,7 @@ Nicknames are shown to other room players. The game does not ask for an email, f
 ## Contest entry text
 
 - **Title:** Who Is the Imposter? — One Word, One Outsider
-- **Description:** A quick, phone-friendly social deduction game for 6–12 friends. Everyone except one player gets the same secret word. Take turns giving short clues, discuss face to face, then vote privately on your phone. If the group votes for the wrong person, the imposter gets one chance to guess the secret word and steal the win. Create a room, share its code, and play together—no account or install required for players.
+- **Description:** A quick, phone-friendly social deduction game for 4–12 friends. Everyone except one player gets the same secret word. Take turns giving short clues, discuss face to face, then vote privately on your phone. If the group votes for the wrong person, the imposter gets one chance to guess the secret word and steal the win. Create a room, share its code, and play together—no account or install required for players.
 - **Cover image:** `cover.svg`
 - **Link:** https://sjamjampr-cmd.github.io/who-is-the-imposter/
 
